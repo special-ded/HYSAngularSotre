@@ -1,45 +1,29 @@
-import { Injectable } from '@angular/core';
-import { delay, Observable, of, BehaviorSubject } from 'rxjs';
+import { Injectable, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { Product } from '../interfaces/products.interface';
+import { ProductHttpService } from './product-http.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class ProductsService {
+export class ProductsService implements OnInit {
   generatedProducts: Product[] = [];
-  products$ = new BehaviorSubject<Product[]>([]);
+  productsList$ = new BehaviorSubject<Product[]>([]);
+  filteredByText$ = new BehaviorSubject<Product[]>([]);
 
-  generateProducts(n: number): void {
-    const names: string[] = [
-      'Xiaomi 12',
-      'AirPods',
-      'Iphone 14',
-      'Asus ROG 17',
-      'Mi AirDots',
-      'Sony WH-1000XM4',
-      'Power Bank 200',
-      'Invertor 12-220',
-      'BFG 9000',
-      'Doom Eternal',
-    ];
+  constructor(private http: ProductHttpService) {}
 
-    for (let i = 0; i < n; i++) {
-      const obj = {
-        id: Math.floor(Math.random() * 1500),
-        name: names[Math.floor(Math.random() * 10)],
-        price: Math.floor(Math.random() * 1500),
-        quantity: 1,
-      };
-      this.generatedProducts.push(obj);
-    }
-    this.products$.next(this.generatedProducts);
+  ngOnInit(): void {}
+
+  generateProducts(): void {
+    this.http.getList<Product[]>().subscribe((data) => {
+      (this.generatedProducts = data), console.log(data);
+      this.productsList$.next(this.generatedProducts);
+      this.filteredByText$.next(this.generatedProducts);
+    });
   }
 
-  getProductsList(): Observable<Product[]> {
-    return of(this.generatedProducts).pipe(delay(1000));
-  }
-
-  getProductById(id: number): Product {
-    return this.generatedProducts.find((x) => x.id === id)!;
+  getProductById(id: string) {
+    return this.http.getById<Product>(id);
   }
 }

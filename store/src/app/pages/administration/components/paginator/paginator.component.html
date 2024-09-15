@@ -1,0 +1,17 @@
+<div class="footer">
+  <div class="footer__item">
+    <p class="footer__page">
+      {{ this.paginatorService.currentPage$ | async }}/{{
+        this.paginatorService.totalPages$ | async
+      }}
+    </p>
+  </div>
+  <div class="footer__arrows">
+    <a (click)="prevPage()" class="arrow-link">
+      <img class="arrow-left" src="/assets/img/page-left.png" alt="arrow" />
+    </a>
+    <a (click)="nextPage()" class="arrow-link">
+      <img class="arrow-right" src="/assets/img/page-right.png" alt="arrow" />
+    </a>
+  </div>
+</div>

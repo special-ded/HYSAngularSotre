@@ -1,0 +1,31 @@
+<header class="header">
+  <nav class="header__nav">
+    <ul class="header__list">
+      <li class="header__item">
+        <a routerLink="/shop/home"><img class="main-logo" /></a>
+      </li>
+      <li class="header__item">
+        <a
+          routerLinkActive="activeProducts"
+          routerLink="/shop"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="header__item-link"
+          >Products</a
+        >
+      </li>
+      <li class="header__item">
+        <a
+          (mouseenter)="visible = !visible"
+          routerLinkActive="activeCart"
+          class="header__item-link"
+          routerLink="/shop/cart"
+          >Cart</a
+        >
+        <app-tooltip
+          (mouseleave)="visible = !visible"
+          *ngIf="visible"
+        ></app-tooltip>
+      </li>
+    </ul>
+  </nav>
+</header>

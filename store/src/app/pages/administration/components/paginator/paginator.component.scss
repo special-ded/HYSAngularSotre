@@ -1,0 +1,42 @@
+.footer {
+  margin-top: 10px;
+  padding-right: 0px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  gap: 30px;
+}
+
+.footer__item {
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 39px;
+  display: flex;
+  gap: 16px;
+}
+
+.footer__arrows {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 50px;
+  padding-right: 28px;
+
+  .arrow-link {
+    display: block;
+    cursor: pointer;
+
+    &:active {
+      .arrow-left {
+        position: relative;
+        top: 0px;
+        right: 5px;
+      }
+      .arrow-right {
+        position: relative;
+        top: 0px;
+        left: 5px;
+      }
+    }
+  }
+}

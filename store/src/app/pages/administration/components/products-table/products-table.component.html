@@ -1,0 +1,74 @@
+<div class="table">
+  <div class="table-wrapper">
+    <div class="filters-wrapper">
+      <app-search></app-search>
+      <app-price-filter></app-price-filter>
+    </div>
+
+    <div class="header">
+      <div class="header__item">
+        <p class="sortID">ID</p>
+      </div>
+      <div (click)="sortByName()" class="header__item">
+        <p class="sortName">Name</p>
+        <img
+          *ngIf="isNameAscending"
+          class="arrow-up"
+          src="/assets/img/sort-down.png"
+          alt="arrow"
+        />
+        <img
+          *ngIf="!isNameAscending"
+          class="arrow-down"
+          src="/assets/img/sort-up.png"
+          alt="arrow"
+        />
+      </div>
+      <div (click)="sortByPrice()" class="header__item">
+        <p class="sortPrice">Price</p>
+        <img
+          *ngIf="isPriceAscending"
+          class="arrow-up"
+          src="/assets/img/sort-down.png"
+          alt="arrow"
+        />
+        <img
+          *ngIf="!isPriceAscending"
+          class="arrow-down"
+          src="/assets/img/sort-up.png"
+          alt="arrow"
+        />
+      </div>
+      <img (click)="add()" class="add-btn" src="../../../assets/img/add.png" />
+    </div>
+
+    <div class="table-row-wrapper">
+      <app-spinner *ngIf="loading$ | async"></app-spinner>
+      <ng-container
+        *ngFor="
+          let product of this.paginatorService.currentPageProducts$ | async
+        "
+      >
+        <div class="table-row">
+          <p class="table-row__item">{{ product.id }}</p>
+          <p class="table-row__item">{{ product.name }}</p>
+          <p class="table-row__item">{{ product.price }}</p>
+          <div class="table-row__buttons">
+            <img
+              (click)="editProduct(product.id)"
+              class="edit-btn"
+              src="../../../assets/img/edit.png"
+            />
+            <img
+              (click)="deleteProduct(product.id, product.name)"
+              class="delete-btn"
+              src="../../../assets/img/trash.png"
+            />
+          </div>
+        </div>
+      </ng-container>
+    </div>
+
+    <app-paginator></app-paginator>
+  </div>
+</div>

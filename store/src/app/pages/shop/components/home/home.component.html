@@ -1,0 +1,17 @@
+<div class="home">
+  <h1 class="title">Welcome to the shop!</h1>
+
+  <h3 class="description">Top of our products</h3>
+  <app-spinner *ngIf="loading$ | async"></app-spinner>
+
+  <div class="container">
+    <div class="cards">
+      <app-product-card
+        *ngFor="let product of topProducts$ | async"
+        [product]="product"
+      >
+      </app-product-card>
+    </div>
+    <button class="btn" routerLink="/shop">See all products</button>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="product-info">
+  <h2 routerLink="/products" class="main-title">
+    Products > {{ product.name }}
+  </h2>
+  <h3 class="product-info__id">Product: {{ product.name }}</h3>
+  <h3 class="product-info__descr">Description: {{ product.description }}</h3>
+  <h3 appColorPrice [price]="product.price" class="product-info__price">
+    Price: {{ product.price | hryvniaPipe }}
+  </h3>
+  <app-button (click)="addToCart(product)" [buttonName]="buttonName">
+  </app-button>
+</div>

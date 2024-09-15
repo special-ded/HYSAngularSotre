@@ -1,24 +1,29 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './pages/errors/components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'products',
+    redirectTo: 'shop/home',
     pathMatch: 'full',
   },
   {
-    path: 'products',
+    path: 'shop',
     loadChildren: () =>
-      import('./products/products.module').then((m) => m.ProductsModule),
+      import('./pages/shop/shop.module').then((m) => m.ShopModule),
   },
   {
     path: 'administration',
     loadChildren: () =>
-      import('./administration/administration.module').then(
+      import('./pages/administration/administration.module').then(
         (m) => m.AdministrationModule
       ),
+  },
+  {
+    path: 'login',
+    loadChildren: () =>
+      import('./pages/login/login.module').then((m) => m.LoginModule),
   },
   { path: '**', component: PageNotFoundComponent },
 ];

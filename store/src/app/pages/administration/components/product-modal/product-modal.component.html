@@ -1,0 +1,39 @@
+<div class="modal-container">
+  <h1>{{ data.title }}</h1>
+
+  <form [formGroup]="form" *ngIf="!data.delete" class="modal-form">
+    <div *ngIf="!data.edit" class="form__item">
+      <label>Name</label>
+      <input
+        class="form__input"
+        type="text"
+        formControlName="name"
+        placeholder="Name"
+      />
+    </div>
+
+    <div class="form__item">
+      <label>Price</label>
+      <input
+        formControlName="price"
+        class="form__input"
+        type="number"
+        placeholder="Price"
+      />
+    </div>
+
+    <div *ngIf="!data.edit" class="form__item">
+      <label>Description</label>
+      <input
+        formControlName="description"
+        class="form__input"
+        type="text"
+        placeholder="Description"
+      />
+    </div>
+  </form>
+  <div class="buttons">
+    <button (click)="cancel()" class="send-btn btn">Cancel</button>
+    <button (click)="ok()" class="send-btn btn">Ok</button>
+  </div>
+</div>

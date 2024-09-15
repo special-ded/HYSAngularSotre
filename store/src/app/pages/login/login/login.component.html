@@ -1,0 +1,25 @@
+<div class="container">
+  <article class="article">
+    <h1 class="title">Login</h1>
+    <form [formGroup]="form">
+      <input
+        formControlName="username"
+        class="input"
+        type="text"
+        placeholder="Username"
+      />
+      <input
+        formControlName="password"
+        class="input"
+        type="text"
+        placeholder="Password"
+      />
+    </form>
+    <button class="send-btn btn" (click)="send()">Send</button>
+  </article>
+
+  <a class="shop-link" routerLink="/shop"
+    >Shop
+    <img src="/assets/img/arrow-right.svg" alt="arrow" />
+  </a>
+</div>

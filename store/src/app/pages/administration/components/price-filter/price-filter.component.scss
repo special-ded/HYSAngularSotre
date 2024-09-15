@@ -1,0 +1,21 @@
+.price-filter {
+  padding-right: 240px;
+
+  .select,
+  .price-input {
+    width: 480px;
+    height: 60px;
+    border-radius: 5px;
+    font-size: 32px;
+    line-height: 39px;
+  }
+
+  .select {
+    width: 200px;
+    margin-right: 20px;
+  }
+
+  .price-input {
+    width: 110px;
+  }
+}

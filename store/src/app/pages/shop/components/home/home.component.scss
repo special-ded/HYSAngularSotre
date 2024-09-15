@@ -1,0 +1,34 @@
+.home {
+  width: 100%;
+  height: 100%;
+
+  .title {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 64px;
+    line-height: 77px;
+  }
+  .spinner {
+    width: 100%;
+    height: 300px;
+  }
+
+  .description {
+    margin-top: 45px;
+    text-align: center;
+    font-size: 36px;
+    line-height: 44px;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .cards {
+    margin-top: 78px;
+    margin-bottom: 100px;
+    display: flex;
+    gap: 39px;
+    justify-content: center;
+  }
+}

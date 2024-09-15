@@ -1,0 +1,32 @@
+@import "../../../../../scss/main-colors.scss";
+
+.product-info {
+  padding: 0px 98px 260px 97px;
+}
+
+.main-title {
+  cursor: pointer;
+  margin: 28px 0px 0px 0px;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 58px;
+}
+
+.product-info__id {
+  padding-top: 95px;
+  font-weight: 400;
+  font-size: 36px;
+}
+
+.product-info__descr {
+  padding-top: 37px;
+  font-weight: 400;
+  font-size: 36px;
+}
+
+.product-info__price {
+  margin-top: 36px;
+  margin-bottom: 5px;
+  font-size: 30px;
+  font-weight: 400;
+}

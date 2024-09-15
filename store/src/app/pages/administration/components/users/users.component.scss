@@ -1,0 +1,21 @@
+@import "../../../../../scss/main-colors.scss";
+
+.users-wrapper {
+  background-color: rgb(202, 93, 35);
+}
+
+.header {
+  height: 101px;
+  max-width: 100%;
+  display: block;
+}
+
+.link {
+  padding-top: 33px;
+  padding-left: 53px;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 58px;
+  color: $main-text-color;
+  display: block;
+}

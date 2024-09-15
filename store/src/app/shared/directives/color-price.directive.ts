@@ -1,4 +1,5 @@
 import { Directive, ElementRef, Input, OnInit } from '@angular/core';
+import { ColorEnum } from '../enums/colors.enum';
 
 @Directive({
   selector: '[appColorPrice]',
@@ -14,12 +15,12 @@ export class ColorPriceDirective implements OnInit {
 
   setPriceColor(price: number): void {
     if (price > 1000) {
-      this.el.nativeElement.style.color = 'red';
+      this.el.nativeElement.style.color = ColorEnum.red;
       return;
     }
 
     if (price > 500) {
-      this.el.nativeElement.style.color = 'yellow';
+      this.el.nativeElement.style.color = ColorEnum.yellow;
     }
   }
 }

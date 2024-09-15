@@ -1,0 +1,88 @@
+<div class="table">
+  <div class="table-wrapper">
+    <div class="filters-wrapper">
+      <app-search></app-search>
+      <app-price-filter></app-price-filter>
+    </div>
+
+    <div class="header">
+      <div class="header__item">
+        <p class="sortID">ID</p>
+      </div>
+      <div (click)="sortByName()" class="header__item">
+        <p class="sortName">Name</p>
+        <img
+          *ngIf="isNameAscending"
+          class="arrow-up"
+          src="/assets/img/sort-down.png"
+          alt="arrow"
+        />
+        <img
+          *ngIf="!isNameAscending"
+          class="arrow-down"
+          src="/assets/img/sort-up.png"
+          alt="arrow"
+        />
+      </div>
+      <div (click)="sortByPrice()" class="header__item">
+        <p class="sortPrice">Created At</p>
+        <img
+          *ngIf="isPriceAscending"
+          class="arrow-up"
+          src="/assets/img/sort-down.png"
+          alt="arrow"
+        />
+        <img
+          *ngIf="!isPriceAscending"
+          class="arrow-down"
+          src="/assets/img/sort-up.png"
+          alt="arrow"
+        />
+      </div>
+      <img (click)="add()" class="add-btn" src="../../../assets/img/add.png" />
+    </div>
+
+    <div class="table-row-wrapper">
+      <app-spinner *ngIf="loading$ | async"></app-spinner>
+      <ng-container *ngFor="let user of currentPageUsers">
+        <div class="table-row">
+          <p class="table-row__item">{{ user.id }}</p>
+          <p class="table-row__item">{{ user.username }}</p>
+          <p class="table-row__item">
+            {{ user.createdAt | date : "dd/MM/yyyy" }}
+          </p>
+          <div class="table-row__buttons">
+            <img
+              (click)="editProduct(user.id)"
+              class="edit-btn"
+              src="../../../assets/img/edit.png"
+            />
+            <img
+              (click)="deleteProduct(user.id, user.username)"
+              class="delete-btn"
+              src="../../../assets/img/trash.png"
+            />
+          </div>
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="footer">
+      <div class="footer__item">
+        <p class="footer__page">{{ currentPage }}/{{ totalPages }}</p>
+      </div>
+      <div class="footer__arrows">
+        <a (click)="prevPage()" class="arrow-link">
+          <img class="arrow-left" src="/assets/img/page-left.png" alt="arrow" />
+        </a>
+        <a (click)="nextPage()" class="arrow-link">
+          <img
+            class="arrow-right"
+            src="/assets/img/page-right.png"
+            alt="arrow"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

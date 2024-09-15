@@ -1,0 +1,7 @@
+<div class="price-filter">
+  <select (input)="priceInput($event)" class="select">
+    <option value="More than">More than:</option>
+    <option value="Less than">Less than:</option>
+  </select>
+  <input type="number" class="price-input" (input)="priceInput($event)" placeholder="0">
+</div>

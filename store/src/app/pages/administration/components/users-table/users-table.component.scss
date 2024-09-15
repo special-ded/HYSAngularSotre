@@ -1,0 +1,130 @@
+@import "../../../../../scss/main-colors.scss";
+
+.table {
+  width: 1508px;
+  background: $table-bg;
+  margin-left: 52px;
+
+  .table-wrapper {
+    padding: 20px 30px 10px 30px;
+    height: 89vh;
+    overflow: hidden;
+  }
+
+  .filters-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .header {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 28px;
+    line-height: 39px;
+
+    .header__item {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+
+      &:active {
+        .arrow-up {
+          position: relative;
+          top: 5px;
+          right: 0px;
+        }
+        .arrow-down {
+          position: relative;
+          bottom: 5px;
+          left: 0px;
+        }
+      }
+    }
+  }
+
+  .delete-btn,
+  .edit-btn,
+  .add-btn {
+    cursor: pointer;
+  }
+
+  .heade-add {
+    margin-left: 55px;
+  }
+
+  .table-row-wrapper {
+    margin-top: 27px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    height: 540px;
+  }
+
+  .table-row {
+    flex-shrink: 0;
+    height: 87px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: aliceblue;
+    border-radius: 5px;
+
+    .table-row__item {
+      width: 300px;
+      overflow-wrap: break-word;
+    }
+
+    .table-row__buttons {
+      display: flex;
+      gap: 16px;
+    }
+  }
+
+  .footer {
+    margin-top: 10px;
+    padding-right: 0px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    gap: 30px;
+  }
+
+  .footer__item {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+    display: flex;
+    gap: 16px;
+  }
+
+  .footer__arrows {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 50px;
+    padding-right: 28px;
+
+    .arrow-link {
+      display: block;
+      cursor: pointer;
+
+      &:active {
+        .arrow-left {
+          position: relative;
+          top: 0px;
+          right: 5px;
+        }
+        .arrow-right {
+          position: relative;
+          top: 0px;
+          left: 5px;
+        }
+      }
+    }
+  }
+}

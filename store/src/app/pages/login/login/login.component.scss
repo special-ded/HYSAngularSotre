@@ -1,0 +1,59 @@
+@import "../../../../scss/main-colors.scss";
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  .shop-link {
+    color: $main-text-color;
+  }
+
+  .shop-link {
+    font-family: "Roboto Mono", monospace;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    margin-left: 58px;
+    margin-bottom: 50px;
+  }
+}
+.article {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 570px;
+  height: 375px;
+  border-radius: 20px;
+  background-color: aquamarine;
+
+  .title {
+    padding-top: 29px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  form {
+    text-align: center;
+  }
+
+  .input {
+    width: 510px;
+    height: 51px;
+    font-size: 30px;
+    margin-top: 30px;
+    border-radius: 5px;
+  }
+
+  .send-btn {
+    margin: auto;
+    display: block;
+    margin-top: 30px;
+  }
+}
